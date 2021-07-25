@@ -84,6 +84,18 @@ namespace Calculator_1._0
             this.ShowSpace.ForeColor = Color.White;
         }
 
+        private void Clear_ShowSpace() 
+        {
+            if (   this.ShowSpace.Text == "+" 
+                || this.ShowSpace.Text == "-" 
+                || this.ShowSpace.Text == "/" 
+                || this.ShowSpace.Text == "*" 
+                || this.ShowSpace.Text == "ERROR")
+            {
+                this.ShowSpace.Text = "";
+            }
+        }
+
 
         private void buttonDot_Click(object sender, EventArgs e)
         {
@@ -95,100 +107,70 @@ namespace Calculator_1._0
 
         private void buttonZero_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "0";
         }
 
         private void buttonOne_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "1";
         }
 
         private void buttonTwo_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "2";
         }
 
         private void buttonThree_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "3";
         }
 
         private void buttonFour_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "4";
         }
 
         private void buttonFive_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "5";
         }
 
         private void buttonSix_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "6";
         }
 
         private void buttonSeven_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "7";
         }
 
         private void buttonEight_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "8";
         }
 
         private void buttonNine_Click(object sender, EventArgs e)
         {
-            if (this.ShowSpace.Text == "+" || this.ShowSpace.Text == "-" || this.ShowSpace.Text == "/" || this.ShowSpace.Text == "*")
-            {
-                this.ShowSpace.Text = "";
-            }
+            Clear_ShowSpace();
 
             this.ShowSpace.Text += "9";
         }

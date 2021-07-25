@@ -96,8 +96,40 @@ namespace Calculator_1._0
             }
         }
 
+        private bool OperationSecondClick(object sender, EventArgs e)
+        {// if any other operation or ERROR is on the screen, this function will change operation to those, which was chosen by the user
+            if (   this.ShowSpace.Text == "ERROR"
+                || this.ShowSpace.Text == "+"
+                || this.ShowSpace.Text == "-"
+                || this.ShowSpace.Text == "/"
+                || this.ShowSpace.Text == "*")
+            {
+                this.ShowSpace.Text = (sender as Button).Text;
 
-        private void buttonDot_Click(object sender, EventArgs e)
+                switch (this.ShowSpace.Text)
+                {
+                    case "+":
+                        CurrentOperation = Operations.Plus;
+                        break;
+                    case "-":
+                        CurrentOperation = Operations.Minus;
+                        break;
+                    case "/":
+                        CurrentOperation = Operations.Divide;
+                        break;
+                    case "*":
+                        CurrentOperation = Operations.Multiply;
+                        break;
+                }
+
+                return true;
+            }
+
+            return false;
+        }         
+
+
+            private void buttonDot_Click(object sender, EventArgs e)
         {
             if (!this.ShowSpace.Text.Contains(",") && this.ShowSpace.Text.Length > 0)
             {
@@ -229,9 +261,17 @@ namespace Calculator_1._0
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
+
+
             if (String.IsNullOrEmpty(this.ShowSpace.Text))
             {
                 MessageBox.Show("PLS enter your Number");
+                return;
+            }
+
+            // if any other operation or ERROR is on the screen, this function will change operation to those, which was chosen by the user
+            if (OperationSecondClick(sender, e))
+            {
                 return;
             }
 
@@ -260,8 +300,9 @@ namespace Calculator_1._0
                     case Operations.Divide:
                         if (double.Parse(this.ShowSpace.Text) == 0)
                         {
-                            this.ShowSpace.Text = "ERROR";
                             this.buttonClearAll_Click(sender, e);
+                            this.ShowSpace.Text = "ERROR";
+                            return;
                         }
 
                         PreviousValue /= double.Parse(this.ShowSpace.Text);
@@ -281,6 +322,12 @@ namespace Calculator_1._0
                 return;
             }
 
+            // if any other operation or ERROR is on the screen, this function will change operation to those, which was chosen by the user
+            if (OperationSecondClick(sender, e))
+            {
+                return;
+            }
+
             if (CurrentOperation == Operations.Nothing)
             {
                 PreviousValue = double.Parse(this.ShowSpace.Text);
@@ -306,8 +353,9 @@ namespace Calculator_1._0
                     case Operations.Divide:
                         if (double.Parse(this.ShowSpace.Text) == 0)
                         {
-                            this.ShowSpace.Text = "ERROR";
                             this.buttonClearAll_Click(sender, e);
+                            this.ShowSpace.Text = "ERROR";
+                            return;
                         }
 
                         PreviousValue /= double.Parse(this.ShowSpace.Text);
@@ -324,6 +372,12 @@ namespace Calculator_1._0
             if (String.IsNullOrEmpty(this.ShowSpace.Text))
             {
                 MessageBox.Show("PLS enter your Number");
+                return;
+            }
+
+            // if any other operation or ERROR is on the screen, this function will change operation to those, which was chosen by the user
+            if (OperationSecondClick(sender, e))
+            {
                 return;
             }
 
@@ -352,8 +406,9 @@ namespace Calculator_1._0
                     case Operations.Divide:
                         if (double.Parse(this.ShowSpace.Text) == 0)
                         {
-                            this.ShowSpace.Text = "ERROR";
                             this.buttonClearAll_Click(sender, e);
+                            this.ShowSpace.Text = "ERROR";
+                            return;
                         }
 
                         PreviousValue /= double.Parse(this.ShowSpace.Text);
@@ -370,6 +425,12 @@ namespace Calculator_1._0
             if (String.IsNullOrEmpty(this.ShowSpace.Text))
             {
                 MessageBox.Show("PLS enter your Number");
+                return;
+            }
+
+            // if any other operation or ERROR is on the screen, this function will change operation to those, which was chosen by the user
+            if (OperationSecondClick(sender, e))
+            {
                 return;
             }
 
@@ -398,8 +459,9 @@ namespace Calculator_1._0
                     case Operations.Divide:
                         if (double.Parse(this.ShowSpace.Text) == 0)
                         {
-                            this.ShowSpace.Text = "ERROR";
                             this.buttonClearAll_Click(sender, e);
+                            this.ShowSpace.Text = "ERROR";
+                            return;
                         }
 
                         PreviousValue /= double.Parse(this.ShowSpace.Text);
